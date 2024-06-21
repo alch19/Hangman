@@ -20,6 +20,7 @@ public class WordList {
     }
 
     public String generateRandomWord() {
+        shownWord="";
         this.chosenWord=wordList[(int)(Math.random()*91)];
         this.length=chosenWord.length();
         for(int i=0; i<length; i++) {
@@ -34,6 +35,22 @@ public class WordList {
 
     public String getWord() {
         return this.shownWord;
+    }
+
+    public String getChosenWord() {
+        return this.chosenWord;
+    }
+
+    public String spacedShownWord() {
+        String word="";
+        for(int i=0; i<chosenWord.length(); i++) {
+            if(i!=chosenWord.length()-1) {
+                word+=shownWord.substring(i,i+1) + " ";
+            } else {
+                word+=shownWord.substring(i,i+1);
+            }
+        }
+        return word;
     }
 
     public String makeGuess(String character) {
