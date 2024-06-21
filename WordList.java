@@ -16,7 +16,7 @@ public class WordList {
     "summer", "winter", "spring", "autumn", "rainy", "cloudy", "sunny", "stormy", "windy", "foggy",
     "happy", "sad", "angry", "excited", "bored", "scared", "nervous", "tired", "proud", "surprised"};
         this.chosenWord="";
-        
+        this.shownWord="";
     }
 
     public String generateRandomWord() {
@@ -28,8 +28,12 @@ public class WordList {
         return shownWord;
     }
 
-    private int getLengthOfWord() {
+    public int getLengthOfWord() {
         return this.length;
+    }
+
+    public String getWord() {
+        return this.shownWord;
     }
 
     public String makeGuess(String character) {
@@ -43,5 +47,9 @@ public class WordList {
             }
         }
         return shownWord;
+    }
+
+    public boolean wordCompleted() {
+        return chosenWord.equals(shownWord);
     }
 }
